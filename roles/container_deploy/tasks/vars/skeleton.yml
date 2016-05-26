@@ -1,0 +1,5 @@
+image: "79.124.76.230:5000/skeleton:16"
+host_port: 3000
+container_port: 3000
+app_name: "skeleton"
+pwd: "/opt/apps/skeleton"

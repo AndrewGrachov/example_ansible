@@ -1,0 +1,6 @@
+---
+#Deploys container. app_name is required parameter
+- name: Deploy container
+  hosts: web
+  roles:
+    - container_deploy

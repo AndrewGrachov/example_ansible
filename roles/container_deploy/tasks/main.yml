@@ -1,0 +1,16 @@
+- include_vars: "vars/{{ app_name }}.yml"
+
+- name: Ensure directory
+  file: path="{{ pwd }}" state=directory mode=755 force=yes owner="root" recurse=yes
+
+- name: Copy Docker compose template
+  template: src="templates/{{app_name}}.j2" dest="{{ pwd }}/docker-compose.yml" owner="root"
+  tags: docker
+
+- name: Start service
+  command: docker-compose up -d --force-recreate
+  args:
+    chdir: "{{ pwd }}"
+
+- name: Cleanup unused images
+  shell: docker images -q | xargs docker rmi || true

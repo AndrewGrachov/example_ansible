@@ -1,0 +1,15 @@
+---
+# This task installs and starts Docker
+
+- name: Install Docker
+  apt:
+    name="docker-engine"
+    state=present
+    update_cache=yes
+
+- stat: path=/usr/local/bin/docker-compose
+  register: st
+
+- name: install docker-compose
+  shell: curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+  when: st.stat.exists == False
