@@ -1,6 +1,9 @@
 [web]
 79.124.76.230
+
 [web:vars]
 ansible_ssh_private_key_file=~/.ssh/id_rsa
 ansible_ssh_user=root
 deployment_env=development
+logstash_path=/etc/logstash/config
+logstash_host=79.124.76.230

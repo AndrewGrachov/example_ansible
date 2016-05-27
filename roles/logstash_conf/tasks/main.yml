@@ -1,0 +1,5 @@
+- name: Ensure directory
+  file: path="{{ logstash_path }}" state=directory mode=755 force=yes owner="root" recurse=yes
+
+- name: Copy Logstash Config
+  copy: src="files/logstash.conf" dest="{{ logstash_path }}/logstash.conf" force="yes" owner="root"
