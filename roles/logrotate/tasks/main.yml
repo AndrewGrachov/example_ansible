@@ -1,0 +1,3 @@
+- name: Copy logrotate config
+  copy: src="../files/logrotate.conf" dest="/etc/logrotate.conf" force=yes owner="root"
+  tags: logrotate
