@@ -7,6 +7,12 @@
     state=present
     update_cache=yes
 
+- name: Install Docker
+  apt:
+    name="docker-engine"
+    state=present
+    update_cache=yes
+
 - stat: path=/usr/local/bin/docker-compose
   register: st
 

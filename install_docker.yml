@@ -4,3 +4,4 @@
   hosts: web
   roles:
     - docker
+    - logrotate
