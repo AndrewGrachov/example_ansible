@@ -1,0 +1,9 @@
+---
+#Deploys container. app_name is required parameter
+- name: Deploy elk to server
+  hosts: web
+  vars:
+    app_name: elk
+  roles:
+    - logstash_conf
+    - container_deploy
