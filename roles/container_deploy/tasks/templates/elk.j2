@@ -3,6 +3,7 @@ elk:
   ports:
     - "{{host_port}}:80"
     - "0.0.0.0:6000:6000/udp"
+    - "0.0.0.0:7000:7000/tcp"
   volumes:
     - /data/elastic/:/data
     - "{{ logstash_path }}:/etc/logstash"
