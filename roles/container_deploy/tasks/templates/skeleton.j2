@@ -2,5 +2,8 @@ skeleton:
   image: {{image}}
   environment:
     - NODE_ENV={{deployment_env}}
+    - OPBEAT_APP_ID={{opbeat_app_id}}
+    - OPBEAT_ORGANIZATION_ID={{opbeat_organization_id}}
+    - OPBEAT_SECRET_TOKEN={{opbeat_secret}}
   ports:
     - "{{host_port}}:{{container_port}}"
